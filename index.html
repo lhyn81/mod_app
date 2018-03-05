@@ -11,60 +11,42 @@
     <link rel="stylesheet" type="text/css" href="./css/jquery.mobile-1.4.5.css" />
     <link rel="stylesheet" type="text/css" href="./css/jquery.mobile-1.4.5.min.css" />
 
+    <!-- <script src="./script/jquery-3.3.1.min.js"></script> -->
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
     <script src="./script/api.js"></script>
     <script src="./script/jquery.mobile-1.4.5.js"></script>
     <script src="./script/jquery.mobile-1.4.5.min.js"></script>
 
-    <style type="text/css">
-        html,
-        body {
-            height: 100%;
-        }
+    <script type="text/javascript">
+      function alertsth(){
+        alert("还没完成~");
+      }
+    </script>
 
-        .wrap {
-            display: -webkit-box;
-            -webkit-box-orient: vertical;
-            -webkit-flex-flow: column;
-        }
-
-        header {
-            height: 35px;
-            width: 100%;
-            text-align: center;
-            background-color: #81a9c3;
-            color: #fff;
-            line-height: 44px;
-            font-size: 20px;
-        }
-
-        .flex-1 {
-            -webkit-box-flex: 1;
-            -webkit-flex: 1;
-        }
-
-        footer {
-            height: 30px;
-            width: 100%;
-            background-color: #81a9c3;
-            color: white;
-            line-height: 30px;
-            text-align: center;
-        }
-    </style>
 </head>
 
-<body class="wrap">
+<body>
       <div data-role="page">
           <div data-role="header" data-theme="a" data-position="fixed">
-              <h1> 热机帮</h1>
+              <a href="#" class="ui-btn-right"></a>
           </div>
           <div data-role="content">
-              <a data-role="button" data-theme"a">水蒸气物性参数计算</a>
+            <div class="ui-block-a">
+              <img src="image/lg.png" width="100%" height="100%"/>
+              <ul data-role="listview" data-inset="true">
+                <li><a href="#" onclick="alertsth()">通用计算模块</a></li>
+                <li><a href="#" onclick="alertsth()">常用设备设计模块</a></li>
+                <li><a href="#" onclick="alertsth()">常用工艺过程计算</a></li>
+                <li><a href="#" onclick="alertsth()">非标工艺过程</a></li>
+                <li><a href="#" onclick="alertsth()">我要定制</a></li>
+              </ul>
+            </div>
           </div>
-          <div data-role="footer" data-theme="b" data-position="fixed">
-              <h1>2018.03</h1>
+          <div data-role="footer" data-theme="a" data-position="fixed">
+              <h2>热能工程及生物质工程设计助手</h2>
           </div>
       </div>
+
 </body>
 <!-- <script type="text/javascript" src="./script/api.js"></script>
 <script type="text/javascript">
@@ -99,5 +81,4 @@
     };
 
 </script> -->
-
 </html>
