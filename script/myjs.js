@@ -1,46 +1,24 @@
-
-$(document).ready(function() {
-  gohome();
+$(document).ready(function(){
+  $(".modbtn").bind('click',test);
 });
 
-function gohome(){
-  $("div[data-role='content']").hide();
-  $("#content_home").show();
+function test(){
+  console.info($(this).attr('id'));
+  var modname=$(this).attr('id');
+  $.ajax({
+  url: "http://127.0.0.1:5000/mobile/show/" + modname,
+  async:false,
+  dataType: "json",
+  success: function (data){
+            $("#mod_info").html(data.modInfo);
+            $.each(data.modVar, function(i, order){
+              $("#mod_input").append("<hr>");
+              $("#mod_input").append("<form methond='post'>");
+              $("#mod_input").append("<label for="+data.modVar[i].varID+">"+data.modVar[i].varName+":</label>");
+              $("#mod_input").append("<input type='text' name="+data.modVar[i].varID+"id="+data.modVar[i].varID+">");
+              $("#mod_input").append("</form>");
+            });
+          }
+    });
+  $.mobile.changePage("#page_mod");
 }
-
-function showmodlist(){
-  $("div[data-role='content']").hide();
-  $("#content_modlist").show();
-}
-
-function showsteam(){
-  $("#content_load").load("html/content.html");
-  $("#content_load").show();
-}
-
-function showinfo(){
-  $("#div_info").show();
-  $("#div_input").hide();
-  $("#div_rlt").hide();
-}
-
-function showinput(){
-  $("#div_info").hide();
-  $("#div_input").show();
-  $("#div_rlt").hide();
-}
-
-function showrlt(){
-  $("#div_info").hide();
-  $("#div_input").hide();
-  $("#div_rlt").show();
-}
-
-
-// $(function() {
-//   $("#test").on('click', function(event) {
-//       var $this = $(this);
-//       event.preventDefault();
-//       $("#content_home").load($this.attr('href'));
-//   });
-// });
